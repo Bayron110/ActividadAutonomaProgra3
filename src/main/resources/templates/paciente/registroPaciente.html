@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-100 via-green-200 to-green-300 min-h-screen">
+
+<!-- Barra de navegación -->
+<nav class="bg-green-600 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center text-white">
+        <div class="text-2xl font-bold">Clínica Vida Saludable</div>
+        <ul class="flex space-x-6">
+            <li><a href="/" class="hover:underline">Inicio</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Contenedor principal -->
+<div class="flex justify-center items-center py-10 px-4">
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-5xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+
+        <!-- Lado izquierdo (info visual) -->
+        <div class="bg-green-600 text-white p-8 flex flex-col justify-center items-center">
+            <h2 class="text-3xl font-bold mb-4 text-center">Bienvenido al Formulario</h2>
+            <p class="text-lg text-center">Completa los datos para crear tu historial clínico. Nos preocupamos por tu salud.</p>
+            <div class="mt-6">
+                <img src="https://img.freepik.com/vector-premium/ilustracion-medico-personas-formulario_701961-842.jpg?w=740" alt="Ilustración médica" class="w-64 rounded-xl shadow-lg">
+            </div>
+        </div>
+
+        <!-- Lado derecho (formulario) -->
+        <form th:action="@{/registrarPacienteNuevo}" method="post" th:object="${paciente}" class="p-8 space-y-6">
+
+            <h3 class="text-2xl font-semibold text-green-700 border-b pb-2">Datos Personales</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Nombre</label>
+                    <input type="text" th:field="*{nombre}" placeholder="Tu nombre"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                    <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Apellido</label>
+                    <input type="text" th:field="*{apellido}" placeholder="Tu apellido"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                    <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="text-red-500 text-sm"></span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Edad</label>
+                    <input type="text" th:field="*{edad}" placeholder="Edad"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                    <span th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Fecha de Nacimiento</label>
+                    <input type="date" th:field="*{fechaNacimiento}"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                    <span th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento}" class="text-red-500 text-sm"></span>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Género</label>
+                    <input type="text" th:field="*{genero}" placeholder="Masculino/Femenino"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                    <span th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}" class="text-red-500 text-sm"></span>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Dirección</label>
+                <input type="text" th:field="*{direccion}" placeholder="Tu dirección"
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                <span th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}" class="text-red-500 text-sm"></span>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-green-700 border-b pb-2 pt-4">Información Médica</h3>
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Razón de consulta</label>
+                <input type="text" th:field="*{consultaMed}" placeholder="¿Por qué consultas?"
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                <span th:if="${#fields.hasErrors('consultaMed')}" th:errors="*{consultaMed}" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">¿Tienes alguna alergia?</label>
+                <input type="text" th:field="*{alergiaT}" placeholder="Ej: Penicilina"
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                <span th:if="${#fields.hasErrors('alergiaT')}" th:errors="*{alergiaT}" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">¿Tienes historia clínica?</label>
+                <input type="text" th:field="*{hisClinica}" placeholder="Sí o No"
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                <span th:if="${#fields.hasErrors('hisClinica')}" th:errors="*{hisClinica}" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-1">Tratamiento deseado</label>
+                <select th:field="*{tratamiento}"
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 bg-green-50 hover:bg-white">
+                    <option value="">Selecciona...</option>
+                    <option value="Rehabilitación Cardíaca">Rehabilitación Cardíaca</option>
+                    <option value="Terapia de Estimulación Sensorial">Terapia de Estimulación Sensorial</option>
+                    <option value="Terapia de Masaje Deportivo">Terapia de Masaje Deportivo</option>
+                    <option value="Ejercicio Terapeutico">Ejercicio Terapeutico</option>
+                    <option value="Rehabilitación Neurológica">Rehabilitación Neurológica</option>
+                    <option value="Fisioterapia Postquirúrgica">Fisioterapia Postquirúrgica</option>
+                </select>
+                <span th:if="${#fields.hasErrors('tratamiento')}" th:errors="*{tratamiento}" class="text-red-500 text-sm"></span>
+            </div>
+
+            <div>
+                <button type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg shadow-md font-semibold transition-transform transform hover:-translate-y-1">
+                    Enviar Registro
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

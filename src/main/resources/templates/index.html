@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Clínica Salud Plus</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-900">
+
+<!-- NAV -->
+<nav class="bg-green-500 shadow-md py-4">
+    <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-3">
+            <img src="/imagenes/logo2-remote.png" class="h-12" alt="Logo Clínica" />
+            <span class="text-3xl font-bold text-white">Clínica Salud Plus</span>
+        </a>
+        <div class="hidden md:flex space-x-6">
+            <a th:href="@{/index}" class="text-white hover:text-green-100 font-semibold transition">🏠 Home</a>
+            <a th:href="@{/registrarPaciente}" class="text-white hover:text-green-100 font-semibold transition">📝 Registro</a>
+        </div>
+    </div>
+</nav>
+
+<!-- SOBRE NOSOTROS -->
+<section class="py-16 px-6 bg-white" id="nosotros">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-green-800 mb-8">Sobre Nosotros</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="text-left text-lg text-gray-700">
+                <p>Con más de 15 años de experiencia, Clínica Salud Plus se ha consolidado como un referente en atención médica de calidad.</p>
+                <p class="mt-4">Contamos con instalaciones modernas, tecnología de vanguardia y un equipo humano comprometido con tu salud.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-6 text-center text-teal-800">
+                <div><span class="text-4xl font-bold">15+</span><br /><span class="text-gray-600">Años de Experiencia</span></div>
+                <div><span class="text-4xl font-bold">50+</span><br /><span class="text-gray-600">Profesionales</span></div>
+                <div><span class="text-4xl font-bold">10K+</span><br /><span class="text-gray-600">Pacientes Atendidos</span></div>
+                <div><span class="text-4xl font-bold">24/7</span><br /><span class="text-gray-600">Atención Continua</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CARRUSEL (Flowbite Carousel) -->
+<div id="controls-carousel" class="relative w-full" data-carousel="static">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-[500px]">
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imagenes/1.png" class="absolute w-full h-full object-cover top-0 left-0" alt="1">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="/imagenes/2.png" class="absolute w-full h-full object-cover top-0 left-0" alt="2">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imagenes/3.png" class="absolute w-full h-full object-cover top-0 left-0" alt="3">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imagenes/4.png" class="absolute w-full h-full object-cover top-0 left-0" alt="4">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="/imagenes/5.png" class="absolute w-full h-full object-cover top-0 left-0" alt="5">
+        </div>
+    </div>
+    <section class="hero bg-teal-100 text-center py-10 px-4">
+        <div class="hero-content">
+            <h1 class="text-4xl font-bold text-teal-800">Tu Salud es Nuestra Prioridad</h1>
+            <p class="mt-4 text-teal-700 text-lg">Brindamos atención médica integral con tecnología de vanguardia y un equipo humano comprometido con tu bienestar.</p>
+            <div class="cta-buttons mt-6">
+                <a href="#servicios" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded transition">Nuestros Servicios</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-20 px-8 bg-gradient-to-tr from-purple-50 via-purple-100 to-purple-200">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-5xl font-extrabold text-center text-purple-900 mb-16 tracking-wide drop-shadow-lg">
+            Lo que ofrecemos para ti
+        </h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
+            <!-- Card 1 -->
+            <article
+                    class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 flex flex-col items-center text-center"
+            >
+                <div
+                        class="text-purple-600 text-7xl mb-6 animate-bounce"
+                        aria-hidden="true"
+                >
+                    👨‍⚕️
+                </div>
+                <h3 class="text-2xl font-semibold mb-3 text-purple-800 tracking-wide">
+                    Atención General
+                </h3>
+                <p class="text-gray-700 text-base max-w-xs">
+                    Evaluaciones médicas integrales para ti y toda tu familia con enfoque preventivo.
+                </p>
+            </article>
+            <!-- Card 2 -->
+            <article
+                    class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 flex flex-col items-center text-center"
+            >
+                <div
+                        class="text-red-500 text-7xl mb-6 animate-pulse"
+                        aria-hidden="true"
+                >
+                    ❤️
+                </div>
+                <h3 class="text-2xl font-semibold mb-3 text-red-600 tracking-wide">
+                    Cardiología Avanzada
+                </h3>
+                <p class="text-gray-700 text-base max-w-xs">
+                    Diagnóstico y tratamiento con tecnología de punta para cuidar tu corazón.
+                </p>
+            </article>
+            <!-- Card 3 -->
+            <article
+                    class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 flex flex-col items-center text-center"
+            >
+                <div
+                        class="text-indigo-500 text-7xl mb-6"
+                        aria-hidden="true"
+                >
+                    🔬
+                </div>
+                <h3 class="text-2xl font-semibold mb-3 text-indigo-700 tracking-wide">
+                    Laboratorio Clínico
+                </h3>
+                <p class="text-gray-700 text-base max-w-xs">
+                    Resultados precisos y rápidos con equipos automatizados para tu tranquilidad.
+                </p>
+            </article>
+            <!-- Card 4 -->
+            <article
+                    class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 flex flex-col items-center text-center"
+            >
+                <div
+                        class="text-pink-500 text-7xl mb-6"
+                        aria-hidden="true"
+                >
+                    👶
+                </div>
+                <h3 class="text-2xl font-semibold mb-3 text-pink-700 tracking-wide">
+                    Cuidado Infantil
+                </h3>
+                <p class="text-gray-700 text-base max-w-xs">
+                    Atención personalizada y amorosa para la salud de los más pequeños de la casa.
+                </p>
+            </article>
+            <!-- Card 5 -->
+            <article
+                    class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 flex flex-col items-center text-center"
+            >
+                <div
+                        class="text-yellow-600 text-7xl mb-6"
+                        aria-hidden="true"
+                >
+                    🦴
+                </div>
+                <h3 class="text-2xl font-semibold mb-3 text-yellow-700 tracking-wide">
+                    Traumatología Integral
+                </h3>
+                <p class="text-gray-700 text-base max-w-xs">
+                    Rehabilitación y tratamiento especializado para lesiones musculares y óseas.
+                </p>
+            </article>
+            <!-- Card 6 -->
+            <article
+                    class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 p-8 flex flex-col items-center text-center"
+            >
+                <div
+                        class="text-red-700 text-7xl mb-6 animate-pulse"
+                        aria-hidden="true"
+                >
+                    🚨
+                </div>
+                <h3 class="text-2xl font-semibold mb-3 text-red-800 tracking-wide">
+                    Emergencias 24/7
+                </h3>
+                <p class="text-gray-700 text-base max-w-xs">
+                    Atención inmediata y profesional disponible en cualquier momento que nos necesites.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- CONTACTO -->
+<section id="contacto" class="py-24 px-8 bg-gradient-to-tr from-pink-50 via-pink-100 to-pink-200">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-5xl font-extrabold text-pink-900 mb-12 tracking-wide drop-shadow-md">
+            ¿Quieres saber más? Contáctanos
+        </h2>
+        <p class="text-lg text-pink-800 max-w-3xl mx-auto mb-12">
+            Nuestro equipo está listo para atender tus consultas y brindarte la mejor atención. Elige la forma que prefieras para comunicarte con nosotros.
+        </p>
+        <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-16 text-pink-900 font-semibold"
+        >
+            <!-- Teléfono -->
+            <div
+                    class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center space-y-4 transform hover:scale-105 transition-transform duration-300"
+            >
+                <div
+                        class="text-pink-600 text-6xl"
+                        aria-hidden="true"
+                >
+                    📞
+                </div>
+                <h3 class="text-2xl tracking-wider">Teléfono</h3>
+                <a href="tel:+59021234567" class="text-pink-700 hover:text-pink-900 text-lg transition">
+                    (02) 1234-567
+                </a>
+            </div>
+            <!-- Email -->
+            <div
+                    class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center space-y-4 transform hover:scale-105 transition-transform duration-300"
+            >
+                <div
+                        class="text-pink-600 text-6xl"
+                        aria-hidden="true"
+                >
+                    ✉️
+                </div>
+                <h3 class="text-2xl tracking-wider">Correo</h3>
+                <a href="mailto:contacto@saludplus.com" class="text-pink-700 hover:text-pink-900 text-lg transition">
+                    contacto@saludplus.com
+                </a>
+            </div>
+            <!-- Dirección -->
+            <div
+                    class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center space-y-4 transform hover:scale-105 transition-transform duration-300"
+            >
+                <div
+                        class="text-pink-600 text-6xl"
+                        aria-hidden="true"
+                >
+                    📍
+                </div>
+                <h3 class="text-2xl tracking-wider">Dirección</h3>
+                <address class="not-italic text-pink-700 text-lg max-w-xs">
+                    Av. Salud y Bienestar,<br />
+                    Quito, Ecuador
+                </address>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-green-500 text-white py-6 text-center">
+    <p class="text-lg">&copy; 2025 Clínica Salud Plus. Todos los derechos reservados.</p>
+    <p class="text-sm">Tu salud es nuestra prioridad - Atención médica de calidad para toda la familia.</p>
+</footer>
+
+</body>
+</html>
