@@ -15,7 +15,7 @@ public class registerController {
     public String mostrarPaciente(Model model){
         Paciente paciente = new Paciente();
         model.addAttribute("paciente", paciente);
-        return "paciente/registroPaciente";
+        return "pacienteRet/registroPaciente";
     }
     @PostMapping("/registrarPacienteNuevo")
     public String mostrarPaciente(@Valid @ModelAttribute Paciente paciente,
@@ -23,9 +23,9 @@ public class registerController {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("errores", bindingResult.getAllErrors());
-            return "paciente/registroPaciente";
+            return "pacienteRet/registroPaciente";
         } else {
-            return "historial/historialClinico";
+            return "historial/historialPaciente";
         }
     }
 
