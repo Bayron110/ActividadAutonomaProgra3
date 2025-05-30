@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.itsqmet</groupId>
-	<artifactId>ClinicaDeber</artifactId>
+	<artifactId>ClinicaActividadAutonoma</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ClinicaDeber</name>
 	<description>primer deber</description>

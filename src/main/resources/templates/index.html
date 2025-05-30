@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Clínica Salud Plus</title>
+    <title>Vitales</title>
     <link rel="stylesheet" th:href="@{/css/estilos.css}" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
@@ -10,18 +10,24 @@
 <body class="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 text-gray-900">
 
 <!-- NAV -->
-<nav class="bg-green-500 shadow-md py-4">
+<nav class="bg-green-500 shadow-md py-6">
     <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-between">
-        <a href="#" class="flex items-center space-x-3">
-            <img src="/imagenes/logo2-remote.png" class="h-12" alt="Logo Clínica" />
-            <span class="text-3xl font-bold text-white">Clínica Salud Plus</span>
+        <a href="#" class="flex items-center space-x-4">
+            <img src="/imagenes/logo2-remote.png" class="h-20" alt="Logo Clínica" />
+            <span class="text-5xl font-extrabold text-white">Vitalix</span>
         </a>
         <div class="hidden md:flex space-x-6">
-            <a th:href="@{/index}" class="text-white hover:text-green-100 font-semibold transition">🏠 Home</a>
-            <a th:href="@{/registrarPaciente}" class="text-white hover:text-green-100 font-semibold transition">📝 Registro</a>
+            <a th:href="@{/index}" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 text-2xl font-semibold rounded-lg transition-all duration-300">
+                Home
+            </a>
+            <a th:href="@{/registrarPaciente}" class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 text-2xl font-semibold rounded-lg transition-all duration-300">
+                Registro
+            </a>
         </div>
     </div>
 </nav>
+
+
 
 <!-- SOBRE NOSOTROS -->
 <section class="py-16 px-6 bg-white" id="nosotros">
@@ -43,33 +49,27 @@
 </section>
 
 <!-- CARRUSEL (Flowbite Carousel) -->
-<div id="controls-carousel" class="relative w-full" data-carousel="static">
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-[500px]">
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/imagenes/1.png" class="absolute w-full h-full object-cover top-0 left-0" alt="1">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="/imagenes/2.png" class="absolute w-full h-full object-cover top-0 left-0" alt="2">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/imagenes/3.png" class="absolute w-full h-full object-cover top-0 left-0" alt="3">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/imagenes/4.png" class="absolute w-full h-full object-cover top-0 left-0" alt="4">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/imagenes/5.png" class="absolute w-full h-full object-cover top-0 left-0" alt="5">
+<!--Seccion del Carusel-->
+<div class="carousel-wrapper">
+    <div class="carousel-container">
+        <div class="carousel-track animate-slide-frame">
+            <!-- Imágenes originales -->
+            <div class="slide" data-slide="1"><img src="/imagenes/logoPrincipal.png" alt="Logo" class="carousel-image"></div>
+            <div class="slide" data-slide="2"><img src="/imagenes/1.png" alt="Imagen 1" class="carousel-image"></div>
+            <div class="slide" data-slide="3"><img src="/imagenes/2.png" alt="Imagen 2" class="carousel-image"></div>
+            <div class="slide" data-slide="4"><img src="/imagenes/3.png" alt="Imagen 3" class="carousel-image"></div>
+            <div class="slide" data-slide="4"><img src="/imagenes/4.png" alt="Imagen 3" class="carousel-image"></div>
         </div>
     </div>
-    <section class="hero bg-teal-100 text-center py-10 px-4">
-        <div class="hero-content">
-            <h1 class="text-4xl font-bold text-teal-800">Tu Salud es Nuestra Prioridad</h1>
-            <p class="mt-4 text-teal-700 text-lg">Brindamos atención médica integral con tecnología de vanguardia y un equipo humano comprometido con tu bienestar.</p>
-            <div class="cta-buttons mt-6">
-                <a href="#servicios" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded transition">Nuestros Servicios</a>
-            </div>
-        </div>
-    </section>
+</div>
+
+    <!-- Controles de navegación -->
+    <button type="button" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-teal-500 p-3 rounded-full hover:bg-teal-600" data-carousel-prev>
+        &#10094;
+    </button>
+    <button type="button" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-teal-500 p-3 rounded-full hover:bg-teal-600" data-carousel-next>
+        &#10095;
+    </button>
 </div>
 
 
